@@ -1,0 +1,785 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.yellow{
+    color: #ffd21a;
+}
+.p{
+    display: none;
+}
+.button{
+    background-color: #999999;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    width: 120px;
+    height: 40px;
+    display: inline-block;
+    line-height:40px;
+}
+.orange{
+    background-color: #ff8902;
+}
+.chui {
+    position: absolute;
+    z-index: 999;
+    top: 26%;
+    right: 10px;
+    width: 119px;
+
+}
+.yc{
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    left: 0px;
+}
+.guize{
+    text-align: center;
+    position: absolute;
+    /* left: 40%; */
+    width: 100%;
+}
+
+.guize a{
+    color: #1BB4C0;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+body {
+    max-width: 640px;
+    margin:0 auto;
+    /* background: url(img/bg.jpg) repeat-y center 0;*/
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+    min-height: 100%;
+    overflow-x:hidden;
+}
+
+.bg {
+    width: 100%;
+    max-height: 700px;
+    pointer-events: none;
+}
+
+.stage {
+    width: 100%;
+    -webkit-perspective: 800;
+    -webkit-perspective-origin: 50% 200px;
+    position: relative;
+}
+
+.cube {
+    width: 0px;
+    height: 27px;
+    border-radius: 300px;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 396px;
+    z-index: 100;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: visible;
+    -webkit-transform: rotateX(90deg) rotateZ(0deg);
+}
+
+.info{
+    width: 100%;
+    position: absolute;
+    top: 11%;
+    text-align: center;
+    /* display: none; */
+}
+.info img{
+    width: 54%;
+}
+
+.plane {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    z-index: 200;
+    left: 50%;
+    top: 50%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: visible;
+}
+
+.plane>span {
+    position: relative;
+    width: 62px;
+    height: 128px;
+    margin-left: -74px;
+    margin-top: -32px;
+    display: block;
+    /*  background: url(img/2.png) no-repeat center 28px;*/
+    -webkit-background-size: 70% auto;
+    -webkit-transition: background-position .5s ease-in;
+}
+
+.plane>span>figure {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url(../img/e1.png) no-repeat center 0px;
+    -webkit-background-size: 100% auto;
+    pointer-events: none;
+}
+
+.cube.on, .cube.on .plane>span {
+    -webkit-animation: spin 10s infinite linear;
+}
+
+.plane>span.on.luck {
+    background-position: center 3px;
+}
+
+.plane>span:after {
+    content: "";
+    position: absolute;
+    z-index: 360;
+    display: block;
+    width: 100px;
+    height: 100px;
+    bottom: 30px;
+    left: -10px;
+    /*background: url(img/9.png) no-repeat center center;*/
+    -webkit-background-size: 10px auto;
+    -webkit-transition: -webkit-background-size .3s ease-in;
+    position-events: none;
+}
+
+.plane>span.on:after {
+    -webkit-background-size: 120px auto;
+}
+
+.plane>span.on>figure {
+    background-position: center -121px;
+}
+
+.cube.pause, .cube.pause span {
+    -webkit-animation-play-state: paused !important;
+    animation-play-state: paused !important;
+}
+
+.plane.one {
+    -webkit-transform: rotateZ(91deg) translateX(47px) rotateX(-89deg);
+}
+
+.plane.two {
+    -webkit-transform: rotateZ(182deg) translateX(97px) rotateX(-93deg);
+}
+
+.plane.three {
+    -webkit-transform: rotateZ(358deg) translateX(97px) rotateX(-85deg);
+}
+
+.cube.on>.one>span {
+    /* -webkit-animation-name: spin1; */
+    -webkit-transform: rotateY(90deg);
+    z-index: 203;
+    animation-duration:2s;
+    -webkit-animation-duration:2s;
+}
+
+.cube.on>.two>span {
+    /* -webkit-animation-name: spin2; */
+    -webkit-transform: rotateY(171deg);
+    animation-duration:2s;
+    -webkit-animation-duration:2s;
+}
+
+.cube.on>.three>span {
+    /* -webkit-animation-name: spin3; */
+    /*-webkit-transform: rotateY(330deg);*/
+    animation-duration:2s;
+    -webkit-animation-duration:2s;
+}
+
+.p2{
+    -webkit-animation-name: roate360;
+    animation-duration:2s;
+    -webkit-animation-duration:2s;
+}
+@-webkit-keyframes roate360{
+    0% {
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg);
+        -ms-transform:rotate(0deg); 	/* IE 9 */
+        -moz-transform:rotate(0deg); 	/* Firefox */
+        -o-transform:rotate(0deg);
+    }
+    10% {
+        -webkit-transform:rotate(30deg);
+        transform:rotate(30deg);
+        -ms-transform:rotate(30deg); 	/* IE 9 */
+        -moz-transform:rotate(30deg); 	/* Firefox */
+        -o-transform:rotate(30deg);
+    }
+    20% {
+        -webkit-transform:rotate(60deg);
+        transform:rotate(60deg);
+        -ms-transform:rotate(60deg); 	/* IE 9 */
+        -moz-transform:rotate(60deg); 	/* Firefox */
+        -o-transform:rotate(60deg);
+    }
+    30% {
+        -webkit-transform:rotate(90deg);
+        transform:rotate(90deg);
+        -ms-transform:rotate(90deg); 	/* IE 9 */
+        -moz-transform:rotate(90deg); 	/* Firefox */
+        -o-transform:rotate(90deg);
+    }
+    40% {
+        -webkit-transform:rotate(120deg);
+        transform:rotate(120deg);
+        -ms-transform:rotate(120deg); 	/* IE 9 */
+        -moz-transform:rotate(120deg); 	/* Firefox */
+        -o-transform:rotate(120deg);
+    }
+    50% {
+        -webkit-transform:rotate(240deg);
+        transform:rotate(240deg);
+        -ms-transform:rotate(240deg); 	/* IE 9 */
+        -moz-transform:rotate(240deg); 	/* Firefox */
+        -o-transform:rotate(240deg);
+    }
+    60% {
+        -webkit-transform:rotate(180deg);
+        transform:rotate(180deg);
+        -ms-transform:rotate(180deg); 	/* IE 9 */
+        -moz-transform:rotate(180deg); 	/* Firefox */
+        -o-transform:rotate(180deg);
+    }
+    70% {
+        -webkit-transform:rotate(210deg);
+        transform:rotate(210deg);
+        -ms-transform:rotate(210deg); 	/* IE 9 */
+        -moz-transform:rotate(210deg); 	/* Firefox */
+        -o-transform:rotate(210deg);
+    }
+    75% {
+        -webkit-transform:rotate(240deg);
+        transform:rotate(240deg);
+        -ms-transform:rotate(240deg); 	/* IE 9 */
+        -moz-transform:rotate(240deg); 	/* Firefox */
+        -o-transform:rotate(240deg);
+    }
+    80% {
+        -webkit-transform:rotate(270deg);
+        transform:rotate(270deg);
+        -ms-transform:rotate(270deg); 	/* IE 9 */
+        -moz-transform:rotate(270deg); 	/* Firefox */
+        -o-transform:rotate(270deg);
+    }
+    90% {
+        -webkit-transform:rotate(300deg);
+        transform:rotate(300deg);
+        -ms-transform:rotate(300deg); 	/* IE 9 */
+        -moz-transform:rotate(300deg); 	/* Firefox */
+        -o-transform:rotate(300deg);}
+    95% {
+        -webkit-transform:rotate(330deg);
+        transform:rotate(330deg);
+        -ms-transform:rotate(330deg); 	/* IE 9 */
+        -moz-transform:rotate(330deg); 	/* Firefox */
+        -o-transform:rotate(330deg);
+    }
+    100% {
+        -webkit-transform:rotate(360deg);
+        transform:rotate(360deg);
+        -ms-transform:rotate(360deg); 	/* IE 9 */
+        -moz-transform:rotate(360deg); 	/* Firefox */
+        -o-transform:rotate(360deg);
+    }
+
+}
+
+@-webkit-keyframes spin3{
+    0%   {top:0px;}
+    25%  {top:10px;}
+    50%  {top:5px;}
+    75%  {top:10px;}
+    100% {top:0px;}
+}
+@-webkit-keyframes spin2{
+    0%   {top:0px;}
+    25%  {top:5px;}
+    50%  {top:10px;}
+    75%  {top:5px;}
+    100% {top:0px;}
+}
+@-webkit-keyframes spin1{
+    0%   {top:0px;}
+    25%  {top:10px;}
+    50%  {top:5px;}
+    75%  {top:10px;}
+    100% {top:0px;}
+}
+/*@-webkit-keyframes spin3 {
+    0% { -webkit-transform:rotateY(330deg);}
+    100% { -webkit-transform: rotateY(690deg);}
+}
+@-webkit-keyframes spin2 {
+    0% {-webkit-transform:rotateY(210deg);}
+    100% {-webkit-transform:rotateY(570deg);}
+}
+@-webkit-keyframes spin1 {
+    0% { -webkit-transform:rotateY(90deg);}
+    100% { -webkit-transform:rotateY(450deg);}
+}
+@-webkit-keyframes spin{
+    0% {-webkit-transform: rotateX(90deg) rotateZ(0deg); }
+    100% { -webkit-transform: rotateX(90deg) rotateZ(360deg);}
+}*/
+
+
+.stage .hit {
+    position: absolute;
+    z-index: 300;
+    left: 50%;
+    top: 50%;
+    margin-left: 0px;
+    margin-top: -80px;
+    pointer-events: none;
+    display: none;
+}
+
+.stage .hit img {
+    width: 90px;
+    height: auto;
+}
+
+.stage .hit.on {
+    display: block;
+}
+
+
+.jiang1{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    z-index:9999;
+}
+.jiang1 p{
+    margin: 2px;
+    text-shadow: #3D3C3C 0px 6px 12px;
+    font-weight: normal;
+}
+
+.chuiaddw{
+    -webkit-transition: transform 0.2s ease-in-out;
+    -moz-transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+}
+.chuiadd{
+    -webkit-transform: rotateZ(-18deg);
+    -moz-transform: rotateZ(-18deg);
+    -ms-transform: rotateZ(-18deg);
+    transform: rotateZ(-18deg) }
+
+.p3{
+    font-size: 10px;
+}
+
+#mcover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 20000;
+}
+#mcover img {
+    position: fixed;
+    /* right: 28px; */
+    /* top: 25%; */
+    width: 100%;
+    height: auto;
+    z-index: 20001;
+}
+#mcover .zhongjiangtip{
+    position: fixed;
+    right: 28px;
+    top: 25%;
+    width: 260px!important;
+    height: 150px!important;
+    z-index: 20001;
+    background-color: #FFFBB4;
+    border-radius: 10px;
+    color: rgb(132, 59, 59);
+    padding-top: 35px;
+}
+.p3{
+    font-family: 微软雅黑;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 240%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-o-min-device-pixel-ratio: 5/4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+.content{
+    top: 10%;
+    position: absolute;
+    color: #fff;
+    /* text-align: center; */
+    padding: 20px;
+}
+.phonebox{
+    height: 147px;
+    width: 100%;
+    /* background-color: rgb(59, 197, 197); */
+    /* border: 1px solid rgb(32, 197, 97); */
+    text-align: center;
+    margin-top: 58px;
+}
+
+.phonebox {}
+.phone{
+    line-height: 20px;
+    width: 78%;
+    height: 34px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+}
+.submit{
+    width: 80%;
+    margin-top: 10px;
+    height: 40px;
+    border: 0px;
+    background-color: rgb(255, 116, 0);
+    color: #fff;
+
+
+}
+.yahei{font-family:"Microsoft YaHei","微软雅黑","Microsoft JhengHei","华文细黑",STHeiti,MingLiu}
+.big{font-size: 1.5rem}
+.lingqian{text-align: right}
+.lingqian a{text-decoration: none;color: #fff}
+.guanzhu{
+    width: 100%;
+    text-align: center;
+    display: block;
+    background-color: yellow;
+    height: 3rem;
+    font-family: 微软雅黑;
+    font-size: 1.5rem;
+    margin: 0;
+    background-image: -moz-linear-gradient(top, #8fa1ff, #3757fa); /* Firefox */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ff4f02), color-stop(1, #8f2c00)); /* Saf4+, Chrome */
+    bottom: 0px;
+    color: wheat;
+    position: absolute;
+}
+li{list-style: none}
+.guize ul{padding-left: 5px;width: 100%}
+.guize ul li {width: 100%;height: 44px;border-bottom: 1px solid rgb(157, 152, 152);margin-top: 12px;}
+.guize ul li img{float: left}
+.guize ul li div{float: left;font-family: 微软雅黑;font-size: 0.8rem;}
+.qianshu{color: #fff;
+    font-size: 2rem;
+    position: absolute;
+    text-align: center;
+    top: 32px;
+    width: 100%;}
+.twocol{display: inline-block ;width: 40%;position:relative;border-radius: 10px}
+.white{
+    background-image: -moz-linear-gradient(top, #8fa1ff, #3757fa); /* Firefox */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F9F9F9), color-stop(1, #DFDFDF)); /* Saf4+, Chrome */
+    color: #000;
+}
+/*
+.qian{ width: 2.5rem; float: right;}*/
+.guize ul li   .qian{  width: 2.5rem; float: right;  padding-right: 20px;  font-weight: bold;  color: rgb(174, 119, 19);  font-size: 1rem;}
+a{text-decoration: none;}
